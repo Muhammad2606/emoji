@@ -5,11 +5,15 @@ function App() {
   const [getEmoji, setGetEmoji] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    fetch(
-      "https://emoji-api.com/emojis?access_key=f9f498a03c63f1b589a097de520ca773d1f86b61"
-    )
-      .then((res) => res.json())
-      .then((res) => setGetEmoji(res));
+    try{
+      fetch(
+        "https://emoji-api.com/emojis?access_key=f9f498a03c63f1b589a097de520ca773d1f86b61"
+      )
+        .then((res) => res.json())
+        .then((res) => setGetEmoji(res));
+    } catch(error){
+      console.log(error);
+    }
   }, [search]);
   const hendlerChange = (e) => {
     setSearch(e.target.value);
@@ -30,7 +34,7 @@ function App() {
         });
     }
   };
-
+  console.log(getEmoji);
   return (
     <>
       <header className="header">
