@@ -18,6 +18,7 @@ function App() {
   const hendlerChange = (e) => {
     setSearch(e.target.value);
   };
+
   const submitFun = () => {
     if (search !== "") {
       fetch(
@@ -34,7 +35,7 @@ function App() {
         });
     }
   };
-  console.log(getEmoji);
+
   return (
     <>
       <header className="header">
