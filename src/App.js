@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     try{
       fetch(
-        "https://emoji-api.com/emojis?access_key=f9f498a03c63f1b589a097de520ca773d1f86b61"
+        "https://emoji-api.com/emojis?access_key=d97548a32324eac82d7a85b6a1268cc0cb840b87"
       )
         .then((res) => res.json())
         .then((res) => setGetEmoji(res));
@@ -22,7 +22,7 @@ function App() {
   const submitFun = () => {
     if (search !== "") {
       fetch(
-        `https://emoji-api.com/emojis?search=${search}&access_key=f9f498a03c63f1b589a097de520ca773d1f86b61`
+        `https://emoji-api.com/emojis?search=${search}&access_key=d97548a32324eac82d7a85b6a1268cc0cb840b87`
       )
         .then((res) => res.json())
         .then((res) => {
